@@ -89,7 +89,7 @@ int main(void) {
     copiar_vetor(original, copia, n);
 
     inicio = clock();
-    merge_sort(copia, n);
+    merge_sort(copia, 0, n - 1);
     fim = clock();
 
     mostrar_tempo("Merge Sort", inicio, fim);
