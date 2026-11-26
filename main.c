@@ -1,7 +1,7 @@
 #include "registro.h"
 
 
-void gerar_vetor(Registro arr[], int n) {
+void gerarVetor(Registro arr[], int n) {
     for (int i = 0; i < n; i++) {
         arr[i].id = i + 1;
         arr[i].valor = rand();
@@ -9,14 +9,14 @@ void gerar_vetor(Registro arr[], int n) {
 }
 
 
-void copiar_vetor(Registro original[], Registro copia[], int n) {
+void copiarVetor(Registro original[], Registro copia[], int n) {
     for (int i = 0; i < n; i++) {
         copia[i] = original[i];
     }
 }
 
 
-void imprimir_vetor(Registro arr[], int n) {
+void imprimirVetor(Registro arr[], int n) {
     for (int i = 0; i < n; i++) {
         printf("ID: %d | Valor: %d\n",
                arr[i].id, arr[i].valor);
@@ -24,7 +24,7 @@ void imprimir_vetor(Registro arr[], int n) {
 }
 
 
-void mostrar_tempo(const char *nome, clock_t inicio, clock_t fim) {
+void mostrarTempo(const char *nome, clock_t inicio, clock_t fim) {
     double tempo = (double)(fim - inicio) / CLOCKS_PER_SEC;
 
     printf("%s: %.6f segundos\n", nome, tempo);
@@ -46,7 +46,7 @@ int main(void) {
         return 1;
     }
 
-    gerar_vetor(original, n);
+    gerarVetor(original, n);
 
     clock_t inicio, fim;
 
@@ -54,58 +54,58 @@ int main(void) {
 
     if (n == 10) {
         printf("Vetor original:\n");
-        imprimir_vetor(original, n);
+        imprimirVetor(original, n);
         printf("\n");
     }
 
    
-    copiar_vetor(original, copia, n);
+    copiarVetor(original, copia, n);
 
     inicio = clock();
     bubble_sort(copia, n);
     fim = clock();
 
-    mostrar_tempo("Bubble Sort", inicio, fim);
+    mostrarTempo("Bubble Sort", inicio, fim);
 
    
-    copiar_vetor(original, copia, n);
+    copiarVetor(original, copia, n);
 
     inicio = clock();
     selection_sort(copia, n);
     fim = clock();
 
-    mostrar_tempo("Selection Sort", inicio, fim);
+    mostrarTempo("Selection Sort", inicio, fim);
 
   
-    copiar_vetor(original, copia, n);
+    copiarVetor(original, copia, n);
 
     inicio = clock();
     insertion_sort(copia, n);
     fim = clock();
 
-    mostrar_tempo("Insertion Sort", inicio, fim);
+    mostrarTempo("Insertion Sort", inicio, fim);
 
     
-    copiar_vetor(original, copia, n);
+    copiarVetor(original, copia, n);
 
     inicio = clock();
     merge_sort(copia, 0, n - 1);
     fim = clock();
 
-    mostrar_tempo("Merge Sort", inicio, fim);
+    mostrarTempo("Merge Sort", inicio, fim);
 
     
-    copiar_vetor(original, copia, n);
+    copiarVetor(original, copia, n);
 
     inicio = clock();
     quick_sort(copia, 0, n - 1);
     fim = clock();
 
-    mostrar_tempo("Quick Sort", inicio, fim);
+    mostrarTempo("Quick Sort", inicio, fim);
 
     if (n == 10) {
         printf("\nVetor ordenado:\n");
-        imprimir_vetor(copia, n);
+        imprimirVetor(copia, n);
     }
 
     free(original);
