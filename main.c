@@ -40,7 +40,7 @@ int main(void) {
     Registro *copia = malloc(n * sizeof(Registro));
 
     if (original == NULL || copia == NULL) {
-        printf("Erro ao alocar memoria.\n");
+        printf("Erro ao alocar memoria\n");
         free(original);
         free(copia);
         return 1;
