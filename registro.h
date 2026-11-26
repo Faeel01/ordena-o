@@ -1,6 +1,3 @@
-#ifndef REGISTRO_H
-#define REGISTRO_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -16,4 +13,3 @@ void insertion_sort(Registro arr[], int n);
 void merge_sort(Registro arr[], int n);
 void quick_sort(Registro arr[], int low, int high);
 
-#endif
